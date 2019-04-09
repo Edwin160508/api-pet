@@ -1,0 +1,23 @@
+{
+  "name": "api-pet",
+  "version": "1.0.0",
+  "description": "Api cadastro de animais \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C usuários que posuui\u001b[Dsui pets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Edwin Lima",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^8.5.0",
+    "mongoose": "^5.4.17",
+    "nodemailer": "^5.1.1",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}
