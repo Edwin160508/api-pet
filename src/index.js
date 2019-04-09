@@ -10,3 +10,4 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 require('./app/controllers/index')(app);
 app.listen(port);
+console.log('API-Pet Escutando porta '+port);
