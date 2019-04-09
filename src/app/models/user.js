@@ -1,6 +1,32 @@
 const mongoose = require('../../database');
 const bcrypt = require('bcryptjs');
 
+const AnimalSchema = new mongoose.Schema({
+    nome: {
+        type: String,
+        require: true
+    },
+    localizacao: {
+        type: String,
+        require: true        
+    },
+    recompensa: {
+        type: Number        
+    },
+    tipo: {
+        type: String,
+        require: true        
+    },
+    raca: {
+        type: String,
+        require: true        
+    },
+    createAt: {
+        type: Date,
+        default: Date.now
+    }
+});
+
 const UserSchema = new mongoose.Schema({
     nome: {
         type: String,
@@ -21,16 +47,16 @@ const UserSchema = new mongoose.Schema({
         select: false
     },
     telefone: {
-        type: NumberLong,
+        type: Number,
         require: true        
     },
     createAt: {
         type: Date,
         default: Date.now
     },
-    petsList:[{nome: String, localizacao:String, recompensa: Double, animal:String, raca:String}]
+    petList: [AnimalSchema]
 });
-
+// {nome: String, localizacao:String, recompensa: Double, animal:String, raca:String}
 /*Antes de salvar iniciar processo de encriptar senha*/
 UserSchema.pre('save', async function(next){
 	const hash = await bcrypt.hash(this.password, 10);
