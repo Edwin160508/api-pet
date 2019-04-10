@@ -50,11 +50,12 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         require: true        
     },
+    petList: [AnimalSchema],
     createAt: {
         type: Date,
         default: Date.now
-    },
-    petList: [AnimalSchema]
+    }
+    
 });
 // {nome: String, localizacao:String, recompensa: Double, animal:String, raca:String}
 /*Antes de salvar iniciar processo de encriptar senha*/
