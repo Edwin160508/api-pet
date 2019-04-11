@@ -51,13 +51,20 @@ const UserSchema = new mongoose.Schema({
         require: true        
     },
     petList: [AnimalSchema],
+    passwordResetToken:{
+        type: String,
+		select: false
+    },
+    passwordResetExpires:{
+        type: Date,
+		select: false
+    },
     createAt: {
         type: Date,
         default: Date.now
     }
     
 });
-// {nome: String, localizacao:String, recompensa: Double, animal:String, raca:String}
 /*Antes de salvar iniciar processo de encriptar senha*/
 UserSchema.pre('save', async function(next){
 	const hash = await bcrypt.hash(this.password, 10);
